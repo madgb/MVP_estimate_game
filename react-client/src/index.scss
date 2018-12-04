@@ -114,7 +114,7 @@ body{
 }
 
 .resultCard{
-    .myScore{
+    .myScore, .getFwa{
         width: 100%;
         display: flex;
         justify-content: center;
@@ -147,5 +147,15 @@ body{
             display: flex;
             justify-content: space-between;
         }
+    }
+}
+
+.reveal{
+    width: 100%;
+    padding: 1em;
+    font-size: 2rem;
+    .scoreIs{
+        color: #cd0101;
+        font-weight: 900;
     }
 }

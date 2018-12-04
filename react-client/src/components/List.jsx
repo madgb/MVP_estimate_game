@@ -15,7 +15,8 @@ class List extends React.Component {
       done: false,
       start: false,
       price: null,
-      score: 0
+      score: 0,
+      reveal: false
     }
     this.countUp = this.countUp.bind(this);
     this.sendAnswer = this.sendAnswer.bind(this);
@@ -30,6 +31,7 @@ class List extends React.Component {
   }
 
   countUp(){
+    this.checkPoint();
     let item = this.props.items;
     let idx = this.state.counter;
     if(this.state.counter < 8){
@@ -48,8 +50,13 @@ class List extends React.Component {
       })
     }
   }
-
+  checkPoint(){
+    this.setState({
+      reveal: !this.state.reveal
+    })
+  }
   sendAnswer(e){
+    this.checkPoint();
     e.preventDefault();
     let item = this.props.items;
     let idx = this.state.counter;
@@ -58,6 +65,9 @@ class List extends React.Component {
         submitPrice: this.state.price,
         itemIdx: item[idx].id,
         realPrice: item[idx].price,
+        image: item[idx].image,
+        link: item[idx].link,
+        name: item[idx].name,
         dashed: 1,
         errorPercent: (Math.abs(this.state.price - item[idx].price) / item[idx].price) * 100
       }
@@ -96,7 +106,11 @@ class List extends React.Component {
                 key={item[x].id} 
                 item={item[x]} 
                 answer={e => this.sendAnswer(e)}
-                priceCheck={e => this.priceCheck(e)}/>
+                priceCheck={e => this.priceCheck(e)}
+                priceO={this.state.price}
+                priceC={item[this.state.counter].price}
+                reveal={this.state.reveal}
+                />
             )} 
           /> 
           : ''

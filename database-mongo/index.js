@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/mvp-estimate';
+// const mongoUri = 'mongodb://localhost/mvp-estimate';
+const mongoUri = 'mongodb://mvp:javier123@ds125684.mlab.com:25684/mvp-estimate'
 
 const db = mongoose.connect(mongoUri);
 module.exports = db;

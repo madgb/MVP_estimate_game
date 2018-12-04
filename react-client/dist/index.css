@@ -95,25 +95,25 @@ body {
 .result {
   text-align: center; }
 
-.resultCard .myScore {
+.resultCard .myScore, .resultCard .getFwa {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
   font-size: 3em; }
-  .resultCard .myScore div {
+  .resultCard .myScore div, .resultCard .getFwa div {
     width: 100%;
     text-align: center; }
-  .resultCard .myScore form {
+  .resultCard .myScore form, .resultCard .getFwa form {
     padding: 0.3em; }
-    .resultCard .myScore form button {
+    .resultCard .myScore form button, .resultCard .getFwa form button {
       padding: 1.5em;
       background: #fff;
       border: none;
       border-radius: 10px;
       font-size: 1rem;
       position: relative; }
-      .resultCard .myScore form button:active {
+      .resultCard .myScore form button:active, .resultCard .getFwa form button:active {
         top: 3px; }
 
 .resultCard .topten {
@@ -123,3 +123,11 @@ body {
   .resultCard .topten div {
     display: flex;
     justify-content: space-between; }
+
+.reveal {
+  width: 100%;
+  padding: 1em;
+  font-size: 2rem; }
+  .reveal .scoreIs {
+    color: #cd0101;
+    font-weight: 900; }

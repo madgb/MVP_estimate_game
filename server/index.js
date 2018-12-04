@@ -101,8 +101,20 @@ app.get('/topten', (req, res) => {
     });
 })
 
+app.get('/fwa', (req, res) => {
+  console.log('getting..')
+  Items.find({},  { "name": "name", "errorAverage": "errorAverage", "link": "link", "image": "image" }).sort({"errorAverage": -1}).limit(5)
+    .then(rank => {
+      console.log(rank);
+      res.send(rank);
+    })
+    .catch(err =>{
+      console.log(err);
+    });
+})
 
-app.listen(3000, () => {
+
+app.listen(process.env.PORT || 3000, () => {
   console.log('listening on port 3000');
 });
 

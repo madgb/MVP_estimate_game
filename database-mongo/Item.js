@@ -6,7 +6,10 @@ const itemSchema = new mongoose.Schema({
     idx: Number,
     price: Number,
     errorAverage: Number,
-    dashed: Number
+    dashed: Number,
+    image: String,
+    link: String,
+    name: String
   });
 
   // { submitPrice: '100',
