@@ -7,10 +7,19 @@ body{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    & > div{
+        @media(max-width: 425px){
+            width: 100%;
+        }
+    }
 }
 .card{
     width: 500px;
     padding: 3em;
+    @media(max-width: 425px){
+        width: 100%;
+        padding: 0;
+    }
     .start{
         background: #635ee0;
         height: 600px;
@@ -21,6 +30,10 @@ body{
         justify-content: center;
         align-items: center;
         font-size: 6em;
+        @media(max-width: 425px){
+            height: 100vh;
+            border-radius: 0;
+        }
         a{
             text-decoration: none;
             color: #fff;
@@ -46,6 +59,10 @@ body{
     align-items: center;
     font-size: 1em;
     flex-flow: row wrap;
+    @media(max-width: 425px){
+        border-radius: 0;
+        filter: none;
+    }
     .title{
         width: 100%;
         text-align: center;
@@ -75,6 +92,9 @@ body{
         input{
             margin: 0 1em;
         }
+        button{
+            background: #fff;
+        }
     }
 }
 .question{
@@ -100,6 +120,9 @@ body{
 
 .next, .result{
     text-align: right;
+    @media(max-width: 425px){
+        text-align: center;
+    }
     padding: 2em 0;
     a{
         text-decoration: none;
@@ -107,6 +130,14 @@ body{
         font-family: sans-serif;
         font-weight: 900;
         font-size: 3em;
+        @media(max-width: 425px){
+            border: 1px solid;
+            padding: 0.3rem 0.6rem 0rem;
+            font-size: 2rem;
+            background: #fff;
+            border-radius: 3px;
+            box-shadow: 1px 2px 1px 1px #6d6d6d;
+        }
     }
 }
 .result{
@@ -114,6 +145,30 @@ body{
 }
 
 .resultCard{
+    & > form {
+        @media(max-width: 425px){    
+            flex-flow: row wrap;
+            width: 100%;
+            padding: 1rem;
+            input, button{
+                width: 100%;
+                font-size: 1rem;
+                width: 100%;
+                padding: 0.8rem;
+                border-radius: 0;
+                background: #e2e2e2;
+                margin-right: 0;
+                margin-left: 0;
+            }
+        }
+        & > button{
+            @media(max-width: 425px){
+                margin: 5rem 1rem 0;
+                margin-right: 0;
+                margin-left: 0;
+            }
+        }
+    }
     .myScore, .getFwa{
         width: 100%;
         display: flex;
@@ -126,6 +181,18 @@ body{
         }
         form{
             padding: 0.3em;
+            @media(max-width: 425px){
+                width: 100%;
+                padding: 1rem;
+                flex-flow: row wrap;
+            }
+            input{
+                @media(max-width: 425px){
+                    width: 100%;
+                    padding: 0.8rem;
+                    font-size: 1rem;
+                }
+            }
             button{
                 padding: 1.5em;
                 background: #fff;
@@ -133,6 +200,13 @@ body{
                 border-radius: 10px;
                 font-size: 1rem;
                 position: relative;
+                @media(max-width: 425px){
+                    font-size: 1rem;
+                    width: 100%;
+                    padding: 0.8rem;
+                    border-radius: 0;
+                    background: #e2e2e2;
+                }
                 &:active{
                     top: 3px;
                 }

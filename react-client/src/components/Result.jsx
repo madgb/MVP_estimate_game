@@ -64,6 +64,9 @@ class Result extends React.Component {
             }
         )
         .then(res => {
+            if(res.status === 400){
+                window.alert(res.data);
+            }
           console.log(res.data);
         })
         .catch(err => {
@@ -80,7 +83,7 @@ class Result extends React.Component {
         {
             this.state.rank ?
             <div className="myScore">
-                <div>My Score: {this.props.score}</div>
+                <div>My Score: -{this.props.score.toFixed(2)}</div>
                 <form onSubmit={(e) => this.getTen(e)}>
                     <button type="Submit">See Top Scores</button>
                 </form>
@@ -97,14 +100,13 @@ class Result extends React.Component {
         {
             this.state.fwa ?
             <div className="fwa-result">
-                <div>FWA: </div>
                 {
                     this.state.fwa.map(i => (
                         <div>
                             <div>{i.name}</div>
                             <div>
                                 <div>error range</div>
-                                <div>{i.errorAverage}</div>                                
+                                <div>${i.errorAverage.toFixed(2)}</div>                                
                             </div>
                             <div>
                                 <a href={i.link}>
@@ -124,7 +126,7 @@ class Result extends React.Component {
                     this.state.topten.map(i => (
                         <div>
                             <div>{i.name}</div>
-                            <div>{i.score}</div>
+                            <div>-{i.score.toFixed(2)}</div>
                         </div>
                     ))
                 } 

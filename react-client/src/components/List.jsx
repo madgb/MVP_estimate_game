@@ -40,7 +40,7 @@ class List extends React.Component {
       })
       if( -1 < this.state.counter){
         this.setState({
-          score: this.state.score + (Math.abs(this.state.price - item[idx].price) / item[idx].price) * 100
+          score: this.state.score + (Math.abs(this.state.price - item[idx].price))
         })
       }
     }else if (this.state.counter === 8){
@@ -67,9 +67,9 @@ class List extends React.Component {
         realPrice: item[idx].price,
         image: item[idx].image,
         link: item[idx].link,
-        name: item[idx].name,
+        name: item[idx].title,
         dashed: 1,
-        errorPercent: (Math.abs(this.state.price - item[idx].price) / item[idx].price) * 100
+        errorPercent: (Math.abs(this.state.price - item[idx].price))
       }
     )
     .then(res => {

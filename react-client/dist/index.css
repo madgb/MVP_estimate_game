@@ -7,10 +7,17 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
+  @media (max-width: 425px) {
+    #app > div {
+      width: 100%; } }
 
 .card {
   width: 500px;
   padding: 3em; }
+  @media (max-width: 425px) {
+    .card {
+      width: 100%;
+      padding: 0; } }
   .card .start {
     background: #635ee0;
     height: 600px;
@@ -21,6 +28,10 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 6em; }
+    @media (max-width: 425px) {
+      .card .start {
+        height: 100vh;
+        border-radius: 0; } }
     .card .start a {
       text-decoration: none;
       color: #fff;
@@ -42,6 +53,10 @@ body {
   align-items: center;
   font-size: 1em;
   flex-flow: row wrap; }
+  @media (max-width: 425px) {
+    .question, .resultCard {
+      border-radius: 0;
+      filter: none; } }
   .question .title, .resultCard .title {
     width: 100%;
     text-align: center;
@@ -66,6 +81,8 @@ body {
     font-size: 2em; }
     .question form input, .resultCard form input {
       margin: 0 1em; }
+    .question form button, .resultCard form button {
+      background: #fff; }
 
 .question form div {
   position: relative; }
@@ -85,15 +102,47 @@ body {
 .next, .result {
   text-align: right;
   padding: 2em 0; }
+  @media (max-width: 425px) {
+    .next, .result {
+      text-align: center; } }
   .next a, .result a {
     text-decoration: none;
     color: #000;
     font-family: sans-serif;
     font-weight: 900;
     font-size: 3em; }
+    @media (max-width: 425px) {
+      .next a, .result a {
+        border: 1px solid;
+        padding: 0.3rem 0.6rem 0rem;
+        font-size: 2rem;
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 1px 2px 1px 1px #6d6d6d; } }
 
 .result {
   text-align: center; }
+
+@media (max-width: 425px) {
+  .resultCard > form {
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 1rem; }
+    .resultCard > form input, .resultCard > form button {
+      width: 100%;
+      font-size: 1rem;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 0;
+      background: #e2e2e2;
+      margin-right: 0;
+      margin-left: 0; } }
+
+@media (max-width: 425px) {
+  .resultCard > form > button {
+    margin: 5rem 1rem 0;
+    margin-right: 0;
+    margin-left: 0; } }
 
 .resultCard .myScore, .resultCard .getFwa {
   width: 100%;
@@ -106,6 +155,16 @@ body {
     text-align: center; }
   .resultCard .myScore form, .resultCard .getFwa form {
     padding: 0.3em; }
+    @media (max-width: 425px) {
+      .resultCard .myScore form, .resultCard .getFwa form {
+        width: 100%;
+        padding: 1rem;
+        flex-flow: row wrap; } }
+    @media (max-width: 425px) {
+      .resultCard .myScore form input, .resultCard .getFwa form input {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem; } }
     .resultCard .myScore form button, .resultCard .getFwa form button {
       padding: 1.5em;
       background: #fff;
@@ -113,6 +172,13 @@ body {
       border-radius: 10px;
       font-size: 1rem;
       position: relative; }
+      @media (max-width: 425px) {
+        .resultCard .myScore form button, .resultCard .getFwa form button {
+          font-size: 1rem;
+          width: 100%;
+          padding: 0.8rem;
+          border-radius: 0;
+          background: #e2e2e2; } }
       .resultCard .myScore form button:active, .resultCard .getFwa form button:active {
         top: 3px; }
 

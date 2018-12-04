@@ -61,10 +61,20 @@ app.post('/checkAnswer', (req, res) => {
 });
 
 app.post('/score', (req, res) => {
-  Score.create({
-    name: req.body.name,
-    score: req.body.score
-  })
+  if(!req.body.name){
+    res.sendStatus(400).send('your name please');
+  }else{
+    Score.create({
+      name: req.body.name,
+      score: req.body.score
+    })
+    .then((res)=>{
+      console.log(res);
+    })
+    .catch(err =>{
+      console.log(err);
+    });
+  }
   // .then(createdRes => {
   //   myId = createdRes._id;
   //   Score.find({"_id": myId},  { score : 1 })
@@ -84,12 +94,7 @@ app.post('/score', (req, res) => {
   //     console.log(err);
   //   });
   // })
-  .then((res)=>{
-    console.log(res);
-  })
-  .catch(err =>{
-    console.log(err);
-  });
+  
 })
 
 app.get('/topten', (req, res) => {
