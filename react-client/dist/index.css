@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  background: #b7b7b7;
+  font-family: 'Neuton', serif; }
+
+#app {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+
+.card {
+  width: 500px;
+  padding: 3em; }
+  .card .start {
+    background: #635ee0;
+    height: 600px;
+    color: #fff;
+    border-radius: 10px;
+    filter: drop-shadow(7px 8px 4px #4444dd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em; }
+    .card .start a {
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Gamja Flower', cursive;
+      transition: 0.3s ease; }
+      .card .start a:hover {
+        transform: scale(1.1);
+        color: #ff9a9a;
+        font-weight: 900; }
+
+.question, .resultCard {
+  background: #2d2a76;
+  height: 100%;
+  color: #fff;
+  border-radius: 10px;
+  filter: drop-shadow(7px 8px 4px #2d2a76);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  flex-flow: row wrap; }
+  .question .title, .resultCard .title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 0.5em 0.3em; }
+  .question .image, .resultCard .image {
+    width: 63%;
+    border: 0.7em solid;
+    max-height: 40%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0.7em 0; }
+    .question .image img, .resultCard .image img {
+      width: 100%;
+      object-fit: cover; }
+  .question .detail, .resultCard .detail {
+    padding: 1em;
+    font-size: 1.3em; }
+  .question form, .resultCard form {
+    display: flex;
+    padding: 1em;
+    font-size: 2em; }
+    .question form input, .resultCard form input {
+      margin: 0 1em; }
+
+.question form div {
+  position: relative; }
+  .question form div:after {
+    content: '$';
+    position: absolute;
+    top: 6px;
+    right: -28px;
+    color: black;
+    z-index: 100;
+    font-size: 22px; }
+
+.question form input {
+  padding-left: 2em;
+  position: relative; }
+
+.next, .result {
+  text-align: right;
+  padding: 2em 0; }
+  .next a, .result a {
+    text-decoration: none;
+    color: #000;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 3em; }
+
+.result {
+  text-align: center; }
+
+.resultCard .myScore {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  font-size: 3em; }
+  .resultCard .myScore div {
+    width: 100%;
+    text-align: center; }
+  .resultCard .myScore form {
+    padding: 0.3em; }
+    .resultCard .myScore form button {
+      padding: 1.5em;
+      background: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      position: relative; }
+      .resultCard .myScore form button:active {
+        top: 3px; }
+
+.resultCard .topten {
+  width: 100%;
+  padding: 1em 2em;
+  font-size: 2em; }
+  .resultCard .topten div {
+    display: flex;
+    justify-content: space-between; }
