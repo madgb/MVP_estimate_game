@@ -45,7 +45,10 @@ app.post('/checkAnswer', (req, res) => {
             idx : data.itemIdx, 
             price: data.realPrice,
             errorAverage: data.errorPercent,
-            dashed: 1
+            dashed: 1,
+            image: data.image,
+            link: data.link,
+            name: data.name
           }
         )
         .then(createdRes => {
